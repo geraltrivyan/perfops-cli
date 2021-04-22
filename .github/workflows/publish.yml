@@ -1,0 +1,37 @@
+name: Test And Publish
+
+#on:
+#  push:
+#    branches:
+#      - POD-1853
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Go 1.11 and Test
+        uses: cedrickring/golang-action/go1.11@1.6.0
+        env:
+          IMPORT: "ProspectOne/perfops-cli"
+
+      - run: go get -v -d ./
+      - run: bash hack/build-all.sh
+      - run: bash hack/build-pkgs.sh
+
+      - name: Publish package
+        uses: docker://lpenz/ghaction-packagecloud:v0.1
+        with:
+          repository: p1/perfops-test
+        env:
+          PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
+
