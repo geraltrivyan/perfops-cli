@@ -1,0 +1,12 @@
+{
+  "name": "@geraltrivyan/perfops-cli",
+  "version": "1.2.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+
+  "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
+    "semantic-release": "^17.1.1"
+  }
+}
