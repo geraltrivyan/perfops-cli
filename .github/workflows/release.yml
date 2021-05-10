@@ -23,4 +23,3 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
-          NPM_TOKEТ: 0000-0000-0000-0000
