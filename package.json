@@ -1,8 +1,0 @@
-{
-  "name": "@geraltrivyan/perfops-cli",
-  "version": "0.8.5",
-  "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
-    "semantic-release": "^17.1.1"
-  }
-}
