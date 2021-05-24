@@ -31,7 +31,6 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
-          NPM_TOKEN: 0000-0000-0000-0000
 
       - run: go get -v -d ./
       - run: bash hack/build-all.sh
