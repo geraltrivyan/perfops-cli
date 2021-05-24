@@ -24,18 +24,11 @@ jobs:
           node-version: 14.x
           registry-url: https://npm.pkg.github.com/
       - uses: actions/checkout@v1
-      - name: install and build
+      - name: install
         run: |
-          npm install
+          npm install semantic-release -g
       - name: release
-        run: npx semantic-release
+        run: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
-
-      - run: go get -v -d ./
-      - run: bash hack/build-all.sh
-
-      - name: Publish packages
-        run: bash hack/build-pkgs.sh
-        env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
