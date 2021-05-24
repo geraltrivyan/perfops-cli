@@ -33,7 +33,7 @@ for TARGET in ${PERFOPS_FPM_TARGETS[@]}; do
 	echo "Building package $TARGET"
 	fpm -t $TARGET --rpm-os linux -v $PKG_VERSION -s dir -p release/pkgs/ \
 		-n perfops --license ALv2 --vendor ProspectOne -m "PerfOps Support <team@perfops.net>" \
-		--description 'A simple command line tool to access the Prospect One PerfOps API.' \
+		--description "A simple command line tool to access the Prospect One PerfOps API." \
 		--url https://perfops.net/cli \
 		release/perfops-linux-amd64=/usr/local/bin/perfops
 done
