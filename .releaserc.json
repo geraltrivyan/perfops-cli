@@ -1,4 +1,9 @@
 {
+  "branches":
+  [
+    "staging",
+    "master"
+  ],
   "plugins":
   [
     "@semantic-release/commit-analyzer",

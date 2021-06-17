@@ -14,13 +14,14 @@ jobs:
       - name: Use Go 1.11 and Test
         uses: cedrickring/golang-action/go1.11@1.6.0
         env:
+          GO111MODULE: "on"
           IMPORT: "ProspectOne/perfops-cli"
 
   publish-package:
     needs: test-package
     name: publish-package
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/staging' }}
     steps:
       - uses: actions/setup-node@v1
         with:
