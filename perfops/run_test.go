@@ -611,7 +611,7 @@ func TestIsValidLimit(t *testing.T) {
 }
 
 func TestDoPostRunRequest(t *testing.T) {
-	errDummyTr := errors.New("Post https://api.perfops.net/run/test: dummy impl")
+	errDummyTr := errors.New("Post https://api.perfops.space/run/test: dummy impl")
 	reqTestCases := map[string]struct {
 		runReq     RunRequest
 		tr         *recordingTransport
